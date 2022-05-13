@@ -311,7 +311,7 @@
 		$("#shuffle").on("click", function() {
 			$("#team_1").html("");
             $("#team_2").html("");
-            const team_power = Math.floor(total_val / 2);
+            var team_power = Math.floor(total_val / 2);
             var team_pow1 = Math.floor(total_val / 2);
             var team_pow2 = Math.floor(total_val / 2);
 
@@ -324,9 +324,14 @@
 
 				if(team_num === 1) {
                     if (team_1.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow1 - 10) {
-                            team_1.append(name_tag);
-                            team_pow1 = team_pow1 - $(item).val();
+                        if ($(item).val() < team_pow1) {
+                            if (team_pow1 < team_power && team_pow1 > team_power - 40 && team_2.find("p").length < team_limit) {
+                                team_2.append(name_tag)
+                                team_pow2 = team_pow2 - $(item).val();
+                            } else {
+                                team_1.append(name_tag);
+                                team_pow1 = team_pow1 - $(item).val();
+                            }
                         } else if (team_2.find("p").length < team_limit) {
                             team_2.append(name_tag);
                             team_pow2 = team_pow2 - $(item).val();
@@ -340,9 +345,14 @@
 					}
 				} else if(team_num === 2) {
                     if (team_2.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow2 - 10) {
-                            team_2.append(name_tag);
-                            team_pow2 = team_pow2 - $(item).val();
+                        if ($(item).val() < team_pow2) {
+                            if (team_pow2 < team_power && team_pow2 > team_power - 40 && team_1.find("p").length < team_limit) {
+                                team_1.append(name_tag)
+                                team_pow1 = team_pow1 - $(item).val();
+                            } else {
+                                team_2.append(name_tag);
+                                team_pow2 = team_pow2 - $(item).val();
+                            }
                         } else if (team_1.find("p").length < team_limit) {
                             team_1.append(name_tag);
                             team_pow1 = team_pow1 - $(item).val();
@@ -379,7 +389,7 @@
 
                 if (team_num === 1) {
                     if (team_1.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow1 - 10) {
+                        if ($(item).val() < team_pow1) {
                             team_1.append(name_tag);
                             team_pow1 = team_pow1 - $(item).val();
                         } else if (team_2.find("p").length < team_limit) {
@@ -403,7 +413,7 @@
                     }
                 } else if (team_num === 2) {
                     if (team_2.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow2 - 10) {
+                        if ($(item).val() < team_pow2) {
                             team_2.append(name_tag);
                             team_pow2 = team_pow2 - $(item).val();
                         } else if (team_3.find("p").length < team_limit) {
@@ -427,7 +437,7 @@
                     }
                 } else if (team_num === 3) {
                     if (team_3.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow3 - 10) {
+                        if ($(item).val() < team_pow3) {
                             team_3.append(name_tag);
                             team_pow3 = team_pow3 - $(item).val();
                         } else if (team_1.find("p").length < team_limit) {
