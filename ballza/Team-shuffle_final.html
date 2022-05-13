@@ -284,7 +284,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
     <script>
 	$(document).ready(function() {
-        var = total_val;
+        var total_val;
 		//이름 박스 클릭시 선택 숫자 수정
 		$(".name_item").on("click", function() {
             $("#select_num").text($(".name_checkbox:checked").length);
@@ -292,7 +292,7 @@
             $(".name_checkbox:checked").each(function () {
                 sum += Number($(this).val());
             });
-            total_val = num;
+            total_val = sum;
 		});
 
 		//초기화
