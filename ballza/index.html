@@ -324,7 +324,7 @@
 
 				if(team_num === 1) {
                     if (team_1.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow1) {
+                        if ($(item).val() < team_pow1 + 15) {
                             team_1.append(name_tag);
                             team_pow1 = team_pow1 - $(item).val();
                         } else if (team_2.find("p").length < team_limit) {
@@ -340,7 +340,7 @@
 					}
 				} else if(team_num === 2) {
                     if (team_2.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow2) {
+                        if ($(item).val() < team_pow2 + 15) {
                             team_2.append(name_tag);
                             team_pow2 = team_pow2 - $(item).val();
                         } else if (team_1.find("p").length < team_limit) {
@@ -379,7 +379,7 @@
 
                 if (team_num === 1) {
                     if (team_1.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow1) {
+                        if ($(item).val() < team_pow1 + 15) {
                             team_1.append(name_tag);
                             team_pow1 = team_pow1 - $(item).val();
                         } else if (team_2.find("p").length < team_limit) {
@@ -403,7 +403,7 @@
                     }
                 } else if (team_num === 2) {
                     if (team_2.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow2) {
+                        if ($(item).val() < team_pow2 + 15) {
                             team_2.append(name_tag);
                             team_pow2 = team_pow2 - $(item).val();
                         } else if (team_3.find("p").length < team_limit) {
@@ -427,7 +427,7 @@
                     }
                 } else if (team_num === 3) {
                     if (team_3.find("p").length < team_limit) {
-                        if ($(item).val() < team_pow3) {
+                        if ($(item).val() < team_pow3 + 15) {
                             team_3.append(name_tag);
                             team_pow3 = team_pow3 - $(item).val();
                         } else if (team_1.find("p").length < team_limit) {
