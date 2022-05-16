@@ -315,17 +315,17 @@
             var team_pow1 = Math.floor(total_val / 2);
             var team_pow2 = Math.floor(total_val / 2);
 
-            $.each($("input.name_checkbox:checked"), function (index, item) {
+			$.each($("input.name_checkbox:checked"), function(index, item) {
                 const team_limit = Math.floor($("input.name_checkbox:checked").length / 2);
-                const team_num = Math.floor(Math.random() * (1 - 0 + 1)) + 1
-                const team_1 = $("#team_1");
-                const team_2 = $("#team_2");
-                const name_tag = $("<p>" + $(item).attr('id') + team_num + "</p>");
+				const team_num = Math.floor(Math.random() * (1 - 0 + 1)) + 1
+				const team_1 = $("#team_1");
+				const team_2 = $("#team_2");
+				const name_tag = $("<p>" + $(item).attr('id')+ "</p>");
 
-                if (team_num === 1) {
+				if(team_num === 1) {
                     if (team_1.find("p").length < team_limit) {
                         if ($(item).val() < team_pow1) {
-                            if (team_pow1 < team_power && team_pow1 > team_power - 40 && team_2.find("p").length < team_limit && team_2.find("p").length < 2) {
+                            if (team_pow1 < team_power && team_pow1 > team_power - 40 && team_2.find("p").length < team_limit) {
                                 team_2.append(name_tag)
                                 team_pow2 = team_pow2 - $(item).val();
                             } else {
@@ -336,23 +336,17 @@
                             team_2.append(name_tag);
                             team_pow2 = team_pow2 - $(item).val();
                         } else {
-                            if ($(item).val() < (team_pow1 + team_pow2 - $(item).val()) / ($("input.name_checkbox:checked").length - team_2.find("p").length - team_1.find("p").length - 1)
-                                && team_2.find("p").length < team_limit) {
-                                team_2.append(name_tag);
-                                team_pow2 = team_pow2 - $(item).val();
-                            } else {
-                                team_1.append(name_tag);
-                                team_pow1 = team_pow1 - $(item).val();
-                            }
+                            team_1.append(name_tag);
+                            team_pow1 = team_pow1 - $(item).val();
                         }
-                    } else {
+					} else {
                         team_2.append(name_tag);
                         team_pow2 = team_pow2 - $(item).val();
-                    }
-                } else if (team_num === 2) {
+					}
+				} else if(team_num === 2) {
                     if (team_2.find("p").length < team_limit) {
                         if ($(item).val() < team_pow2) {
-                            if (team_pow2 < team_power && team_pow2 > team_power - 40 && team_1.find("p").length < team_limit && team_1.find("p").length < 2) {
+                            if (team_pow2 < team_power && team_pow2 > team_power - 40 && team_1.find("p").length < team_limit) {
                                 team_1.append(name_tag)
                                 team_pow1 = team_pow1 - $(item).val();
                             } else {
@@ -363,19 +357,13 @@
                             team_1.append(name_tag);
                             team_pow1 = team_pow1 - $(item).val();
                         } else {
-                            if ($(item).val() < (team_pow1 + team_pow2 - $(item).val()) / ($("input.name_checkbox:checked").length - team_2.find("p").length - team_1.find("p").length - 1)
-                                && team_1.find("p").length < team_limit) {
-                                team_1.append(name_tag);
-                                team_pow1 = team_pow1 - $(item).val();
-                            } else {
-                                team_2.append(name_tag);
-                                team_pow2 = team_pow2 - $(item).val();
-                            }
+                            team_2.append(name_tag);
+                            team_pow2 = team_pow2 - $(item).val();
                         }
-                    } else {
+					} else {
                         team_1.append(name_tag);
                         team_pow1 = team_pow1 - $(item).val();
-                    }
+					}
                 }
             });
             team_1.append(team_pow1);
