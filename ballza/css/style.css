@@ -104,7 +104,7 @@ header .logo a img{display: block; width: 200px; image-rendering: auto; image-re
 
 #name_box .box_body{flex: 1 1 auto; padding: 1.5rem 1.5rem;}
 #name_box .box_body .name_list{display: flex; flex-wrap: wrap; margin-bottom: -.5rem!important; margin-right: -.5rem;}
-#name_box .box_body .name_list .name_item .name_label{min-width: 50px; display: inline-flex; align-items: center; justify-content: center; color: #232e3c; background-color: #fff; border: 1px solid rgba(101,109,119,.24); padding: .8rem .8rem; border-radius: 4px; font-size: 14px; white-space: nowrap; margin: 0 1rem 1rem 0!important; transition: all .15s;}
+#name_box .box_body .name_list .name_item .name_label{min-width: 70px; display: inline-flex; align-items: center; justify-content: center; color: #232e3c; background-color: #fff; border: 1px solid rgba(101,109,119,.24); padding: .8rem .8rem; border-radius: 4px; font-size: 14px; white-space: nowrap; margin: 0 1rem 1rem 0!important; transition: all .15s;}
 #name_box .box_body .name_list .name_item .name_label:hover{border-color: #a7abb1; background-color: #f4f6fa;}
 #name_box .box_body .name_list .name_item .name_checkbox{display: none;}
 #name_box .box_body .name_list .name_item .name_checkbox:checked + .name_label{border-color: rgba(32,107,196,.5); box-shadow: 0px 0px 0px 0.25rem rgba(32,107,196,0.25);}
